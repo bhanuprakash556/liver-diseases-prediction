@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ 
+	<h1>LIVER DISEASE PREDICTION</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <table border="1" align="center" width='500' height='500'> 
+    	
+      <tr><td><input type="float" name="AGE" placeholder="AGE" size="20" required="required" /></td></tr>
+      
+        <tr><td>	<input type="float" name="Total_Bilirubin	" size="20" placeholder="Total_Bilirubin" required="required" /></td></tr>
+          <tr><td> <input type="float" name="Direct_Bilirubin" size="20" placeholder="Direct_Bilirubin" required="required" /></td></tr>
+            <tr><td>  <input type="float" name="Alkaline_Phosphotase"size="20" placeholder="Alkaline_Phosphotase" required="required" /></td></tr>
+              <tr><td> <input type="float" name="Alamine_Aminotransferase" size="20" placeholder="Alamine_Aminotransferase" required="required" /></td></tr>
+                <tr><td> <input type="float" name="Aspartate_Aminotransferase" size="20" placeholder="Aspartate_Aminotransferase" required="required" /></td></tr>
+                  <tr><td> <input type="float" name="Total_Protiens" size="20" placeholder="SEC" required="required" /></td></tr>
+                    <tr><td> <input type="float" name="Albumin" size="20" placeholder="Albumin" required="required" /></td></tr>
+                      <tr><td> <input type="float" name="Albumin_and_Globulin_Ratio" size="20" placeholder="Albumin_and_Globulin_Ratio" required="required" /></td></tr>
+                        <tr><td>  <input type="char" name="gender" placeholder="gender" size="20" required="required" /></td></tr>
+		</table>
+
+      <table align="center"> <tr><td> <button type="submit"  class="btn btn-primary btn-block btn-large">Predict</button></td></tr></table>
+
+    </form>
+
+  <table align="center"><tr><td> {{ prediction }}</td></tr></table>
+
+
+ 
+
+
+</body>
+</html>
