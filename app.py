@@ -5,7 +5,7 @@ from flask import Flask, request, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('liver1.pk', 'rb'))
+model = pickle.load(open('liver.pk', 'rb'))
 
 @app.route('/')
 def home():
